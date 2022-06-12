@@ -1,0 +1,12 @@
+look at both A and B
+if A > B, add A into c
+otherwise add B
+
+have a counter to say how many similar operations you have done and make sure that is less than k.
+
+1
+5 9 3
+caaca
+bedededeb
+
+
