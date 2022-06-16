@@ -59,11 +59,16 @@ If you then meet a new value which is higher than the current, increase the sum 
 
 ### Brute Force
 This method goes through every possible segment, finding the score for each and then picking the highest.  
+A slight improvement made to this is that you never start or end on a negative because the best segment is never going to be there.  
 O(n^3) time. This is obviously too slow.  
 - Go through main list once to find start pos.  
 - Go through main list again to find end pos.  
 - Go through the segment produced by those values to find the sum.  
 [brute_force.cpp](solutions/brute_force.cpp)
+
+### Accumulating Sum
+This is just an obvious improvement to the brute force method that I should have seen sooner. The previous method loops through each segment again however this is not necessary as long as you keep a 'rolling sum' and you keep track of the highest value.  
+[accumulate.cpp](solutions/accumulate.cpp)
 
 ### Thoughts
 #### Two Pointers
@@ -75,5 +80,7 @@ if (right_pointer-1 == score_increase):
     right_pointer--;
 ```
 This doesn't work because if you have a list `1 2 3 -199 1 1`, moving either of the pointers by one decreases the score so we don't do that. However, the optimal score from that list would be `1 2 3`.  
+
+Obviously just have an increasing counter. No need to loop back through the segment.  
 
 
