@@ -1,4 +1,4 @@
-# Cheap Travel
+# Cheap Travel - 1200
 
 - [Problem](#Problem)
 - [Solution](#Solution)
@@ -32,4 +32,6 @@ Output
 In the first sample one of the optimal solutions is: each time buy a one ride ticket. There are other optimal solutions. For example, buy three m ride tickets.
 
 
-
+## Solution
+Find the prices for if you were to just buy solo tickets or if you were to buy as many multi tickets as possible. This may be less efficient than other methods but since it's just maths calculations, it's unlikely to go over the time limit.  
+[two_prices.cpp](two_prices.cpp)  
