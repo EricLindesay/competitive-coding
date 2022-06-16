@@ -75,6 +75,14 @@ This is now O(n^2) time.
 
 [accumulate.cpp](solutions/accumulate.cpp)
 
+### Accumulate Optimised  
+This is an optimised version of above, the difference being that as soon as the sum becomes <= 0, it skips to the value which caused that.  
+Take this example, `1 2 3 4 -90 0 4`, when setting 0 as the index to start looping from, the sum will first be negative at -90. We know that this sum (before the -90) is the largest it can be on that section of the loop. So we don't need to then consider what happens when i=1 and find all of the segments from that. We can instead just directly set i=5 and skip a lot of looping.  
+[accumulate_negative.cpp](solutions/accumulate_negative.cpp)  
+
+
+
+
 ### Thoughts
 #### Two Pointers
 Use two pointers, one at the start of the list, one at the end.  
@@ -88,4 +96,8 @@ This doesn't work because if you have a list `1 2 3 -199 1 1`, moving either of 
 
 Obviously just have an increasing counter. No need to loop back through the segment.  
 
+
+
+
+If the cumulative score is ever <= 0, we can just stop searching in that segment.
 

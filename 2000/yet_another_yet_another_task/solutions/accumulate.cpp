@@ -58,8 +58,11 @@ int main() {
 				seg_sum += nums[j];
 			}	
 	
-			if (nums[j] < 0) {  // you will never want to end on a negative number
+			if (nums[j] <= 0) {  // you will never want to end on a negative number
 				continue;
+			}
+			if (seg_sum <= 0 && i != j) {  // if the sum is ever <= 0, we don't want to consider the rest of that segment (as long as its not just a one segment long thing).
+				break;
 			}
 			if (seg_sum > highest) {
 				highest = seg_sum;
