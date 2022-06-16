@@ -64,6 +64,7 @@ O(n^3) time. This is obviously too slow.
 - Go through main list once to find start pos.  
 - Go through main list again to find end pos.  
 - Go through the segment produced by those values to find the sum.  
+
 [brute_force.cpp](solutions/brute_force.cpp)
 
 ### Accumulating Sum
@@ -71,6 +72,7 @@ This is just an obvious improvement to the brute force method that I should have
 This is now O(n^2) time.  
 - Go through the main list once to find start pos.
 - Go through the main list again to find the end pos.  
+
 [accumulate.cpp](solutions/accumulate.cpp)
 
 ### Thoughts
