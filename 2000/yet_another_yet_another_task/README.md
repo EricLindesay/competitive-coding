@@ -68,6 +68,9 @@ O(n^3) time. This is obviously too slow.
 
 ### Accumulating Sum
 This is just an obvious improvement to the brute force method that I should have seen sooner. The previous method loops through each segment again however this is not necessary as long as you keep a 'rolling sum' and you keep track of the highest value.  
+This is now O(n^2) time.  
+- Go through the main list once to find start pos.
+- Go through the main list again to find the end pos.  
 [accumulate.cpp](solutions/accumulate.cpp)
 
 ### Thoughts
