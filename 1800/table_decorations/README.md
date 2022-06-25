@@ -1,4 +1,4 @@
-# Table Decorations
+# Table Decorations - 1800
 
 - [Problem](#Problem)
 - [Solution](#Solution)
@@ -18,23 +18,24 @@ Print a single integer t — the maximum number of tables that can be decorated 
 
 ### Examples
 ```
-input
+Input
 5 4 3
-output
+Output
 4
 ```
 ```
-input
+Input
 1 1 1
-output
+Output
 1
 ```
 ```
-input
+Input
 2 3 3
-output
+Output
 2
 ```
+
 ### Note
 In the first sample you can decorate the tables with the following balloon sets: "rgg", "gbb", "brr", "rrg", where "r", "g" and "b" represent the red, green and blue balls, respectively.
 
@@ -52,5 +53,6 @@ This works on my local machine but when I test it on the website, it doesn't wor
 
 The reason was because the program gets run on a 32 bit machine, in which a long is only 32 bits, not the 64 I was expecting. The solution to this was to do all of the numbers as a long long which is 64 bits on both a 64 bit machine and a 32 bit machine.  
 
-[average.cpp](average.cpp)
+[average.cpp](average.cpp)  
 
+Solved! 

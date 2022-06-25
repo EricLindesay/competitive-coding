@@ -35,3 +35,5 @@ In the first sample one of the optimal solutions is: each time buy a one ride ti
 ## Solution
 Find the prices for if you were to just buy solo tickets or if you were to buy as many multi tickets as possible. This may be less efficient than other methods but since it's just maths calculations, it's unlikely to go over the time limit.  
 [two_prices.cpp](two_prices.cpp)  
+
+Solved!

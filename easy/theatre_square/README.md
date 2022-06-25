@@ -29,5 +29,6 @@ Output
 Don't you just have to find the area of n*m and then divide it by a^2?  
 No you can't do that because LSF and ASF thingy.  
 Instead you must do `n/a * m/a`, finding the ceiling of each division.  
-[theatre_square.cpp](theatre_square.cpp)
+[theatre_square.cpp](theatre_square.cpp)  
 
+Solved!
