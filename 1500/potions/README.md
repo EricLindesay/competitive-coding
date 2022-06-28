@@ -24,7 +24,8 @@ Output a single integer, the maximum number of potions you can drink without you
 ### Examples
 ```
 Input
-64 -4 1 -3 1 -3
+6
+4 -4 1 -3 1 -3
 Output
 5
 ```
