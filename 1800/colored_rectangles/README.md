@@ -83,4 +83,21 @@ However this doesn't work since if you have
 Then this would give 11*11 but you should do 10\*11 + 10\*11.  
 
 So, choose each of the lists to be the lead and then pick from the other two based on highest. Then if you run out of the current list, you can easily find the highest multiplication of just those two lists.  
+Choose each of the three lists to be the pivot and find the highest of those three.  
+[pivot_list.cpp](solutions/pivot_list.cpp)  
+
+### Recursion
+However, this doesn't work. This is because if the pivot list's highest value is lower than the highest value of both the other lists, you should choose one of those other lists to become the new pivot.  
+What if we try to do it recursively?  
+Look at if we assume red and green should be chosen, then use recursion on the rest of the list.  
+Look at if we assume red and blue should be chosen, then use recursion on the rest of the list.  
+Look at if we assume green and blue should be chosen, then use recursion on the rest of the list.  
+[recursion.cpp](solutions/recursion.cpp)  
+
+### Optimised Recursion
+Recursion like that is too slow, so we have to optimise it.  
+One optimisation is that, every recursive loop, if the sizes of the lists are all the same and the values are not all equal, then just take the best two values and do recursion on the rest.  
+This means that you don't need to check all three of the sublists. We know the best solution of those three, so you can skip straight to that.  
+What if you have the scenario of one of them being high and two of them being low but equal. Then you need to do two scenarios.  
+[optimised_recursion.cpp](solutions/optimised_recursion.cpp)  
 
