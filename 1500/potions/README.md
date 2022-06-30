@@ -54,3 +54,38 @@ In the following scenario, you should never take the -2, but this method would.
 2 -2 3 -1 -1 -1 -1 -1
 ```
 
+### Store Negative Potions
+Create a list of potions which give a negative value (as you find them).  
+If the current negative will kill you but is weaker than the negatives you already have, replace the previous potion and drink the new one instead. So increment your health by the difference between them.  
+If the potion won't kill you, drink it and add it to the list of seen potions.  
+If the potion is positive, drink it.  
+```
+If the potion is negative:
+    If it will kill you:
+        If this potion is weaker than others drunk:
+            replace that in the array of seen bad potions
+        else:
+            don't drink it
+    else:
+        drink it and add it to the list
+else:
+    drink it
+```
+This is significantly faster than the other method (thanks Indra) but it fails the time limit on test 2 for some reason.  
+
+[track_seen.cpp](solutions/track_seen.cpp)
+
+### Using Lists
+In C++, (linked) lists are very useful for inserting and removing elements (which I am doing a lot of).  
+The following two programs use a bi-directional list and a forward list respectively.  
+The forward list is more efficient.  
+[lists.cpp](solutions/lists.cpp)  
+[forlists.cpp](solutions/forlists.cpp)  
+
+
+## Things for Next Time
+Always think about creating a new list to store necessary data for when you have to loop through data.  
+ALWAYS think about what data structure to use. Originally I was using a vector which was too slow but as soon as I swapped to a forward list, it was efficient enough. This is because the vector has to move about a bunch of memory when inserting but a forward list just points to the new insert position.  
+
+
+Solved!
