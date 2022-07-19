@@ -1,5 +1,4 @@
 # Colored Rectangles - 1800
-
 - [Problem](#problem)
 - [Solution](#solution)
 
@@ -61,6 +60,7 @@ Input
 Output
 372
 ```
+
 ### Note
 In the first example you can construct one of these rectangles: red and green with sides `3` and `5`, red and blue with sides `3` and `4` and green and blue with sides `5` and `4`. The best area of them is `4 * 5 = 20`.  
 

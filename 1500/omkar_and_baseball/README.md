@@ -39,6 +39,7 @@ Output
 0
 2
 ```
+
 ### Note
 In the first permutation, it is already sorted so no exchanges are needed.  
 

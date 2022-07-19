@@ -54,8 +54,9 @@ Then, sort the list and the counter, then just multiply each element respectivel
 E.g.
 ```
 arr = [5, 1, 3]
-1-2
-2-3
+ranges = 1-2
+         2-3
+
 counter = [1, 2, 2]
 sorted_arr = [1, 3, 5]
 sorted_counter = [1, 2, 2]
@@ -67,4 +68,8 @@ Data Structures
 The array storing the input (nums) should be stored as a forward_list. This is because nums exists only to be sorted and looped though forward. You don't need to be able to access any value (except when looping through it forwards) but you do need to sort it which involves a lot of insertion. Because of this, a forward_list is best for it.  
 The array storing the queries needs to be sorted and to have any value access it in constant time.  
 
-https://stackoverflow.com/questions/18408659/how-to-increment-all-values-in-an-array-interval-by-a-given-amount
+To create the array containing how much each value is seen in the range, I used this [stackoverflow link](https://stackoverflow.com/questions/18408659/how-to-increment-all-values-in-an-array-interval-by-a-given-amount).  
+
+Current attempt:  
+[counter.cpp](solutions/counter.cpp)  
+This is too slow for larger inputs, it fails at 200k inputs (the upper bound of inputs). I'm 90% sure this is due to how I sort the queries, this takes O(nlogn) time, which is just too slow.  
