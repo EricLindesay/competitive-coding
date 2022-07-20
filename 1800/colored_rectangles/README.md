@@ -68,6 +68,7 @@ In the second example the best rectangles are: red/blue `9 * 8`, red/blue `5 * 5
 
 In the third example the best rectangles are: red/green `19 * 8` and red/blue `20 * 11`. The total area is `152 + 220 = 372`. Note that you can't construct more rectangles because you are not allowed to have both pairs taken to be the same color.
 
+-----
 
 ## Solution
 

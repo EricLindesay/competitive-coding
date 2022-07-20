@@ -107,6 +107,9 @@ int recursion(int r, int g, int b) {
 	if (g >= 0 && b >= 0) 
 		s3 = green*blue + recursion(r, g-1, b-1);
 
+
+	// do remaining if there are some
+
 	return max({s1, s2, s3});
 }
 
