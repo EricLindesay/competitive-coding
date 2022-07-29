@@ -1,4 +1,5 @@
 # Woodcutters - 1500
+**Tags**: Dynamic Programming, Greedy
 - [Problem](#problem)
 - [Solution](#solution)
 

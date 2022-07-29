@@ -1,4 +1,5 @@
 # Directional Increase - 1300
+**Tags**: Greedy  
 - [Problem](#problem)
 - [Solution](#solution)
 

@@ -5,9 +5,9 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    long long n;
-    cin >> n;
-    cout << endl << n << endl;
+    long long t;
+    cin >> t;
+    cout << endl << t << endl;
 
     return 0;
 }

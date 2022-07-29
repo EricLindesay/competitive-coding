@@ -1,5 +1,5 @@
 # Table Decorations - 1800
-
+**Tags**: Greedy    
 - [Problem](#Problem)
 - [Solution](#Solution)
 

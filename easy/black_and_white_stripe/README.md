@@ -1,4 +1,5 @@
 # Black and White Stripe - 1000
+**Tags**: Implementation, Two Pointers  
 - [Problem](#problem)
 - [Solution](#solution)
 

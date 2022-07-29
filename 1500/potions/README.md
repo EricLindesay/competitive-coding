@@ -1,4 +1,5 @@
 #  Potions (Easy Version) - 1500
+**Tags**: Brute Force, Data Structures, Dynamic Programming, Greedy
 - [Problem](#problem)
 - [Solution](#solution)
 

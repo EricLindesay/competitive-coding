@@ -1,4 +1,5 @@
 # cAPS lOCK - 1000
+**Tags**: Implementation, Strings    
 - [Problem](#problem)
 - [Solution](#solution)
 

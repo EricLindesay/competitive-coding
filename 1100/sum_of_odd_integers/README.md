@@ -1,4 +1,5 @@
 # Sum of Odd Integers - 1100
+**Tags**: Maths  
 - [Problem](#problem)
 - [Solution](#solution)
 

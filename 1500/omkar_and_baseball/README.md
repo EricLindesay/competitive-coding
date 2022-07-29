@@ -1,5 +1,5 @@
 # Omkar and Baseball - 1500
-
+**Tags**: Constructive Algorithms, Maths
 - [Problem](#problem)
 - [Solution](#solution)
 

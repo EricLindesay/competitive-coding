@@ -1,4 +1,5 @@
 # Plus and Multiply - 1500
+**Tags**: Constructive Algorithms, Maths, Number Theory
 - [Problem](#problem)
 - [Solution](#solution)
 

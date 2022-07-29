@@ -1,4 +1,5 @@
 # Make It Good - 1200
+**Tags**: Greedy  
 - [Problem](#problem)
 - [Solution](#solution)
 

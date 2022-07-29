@@ -1,4 +1,5 @@
 # Boy or Girl - 800
+**Tags**: Brute Force, Implementation, Strings
 - [Problem](#problem)
 - [Solution](#solution)
 

@@ -1,4 +1,5 @@
 # IQ test - 1300
+**Tags**: Brute Force
 - [Problem](#problem)
 - [Solution](#solution)
 

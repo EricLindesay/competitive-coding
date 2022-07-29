@@ -1,5 +1,5 @@
 # Cheap Travel - 1200
-
+**Tags**: Implementation  
 - [Problem](#Problem)
 - [Solution](#Solution)
 

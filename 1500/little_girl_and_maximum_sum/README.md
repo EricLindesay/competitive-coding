@@ -1,4 +1,5 @@
 # Little Girl and Maximum Sum - 1500
+**Tags**: Data Structures, Greedy, Implementation, Sorting
 - [Problem](#problem)
 - [Solution](#solution)
 

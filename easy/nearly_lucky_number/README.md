@@ -1,4 +1,5 @@
 # Nearly Lucky Number - 800
+**Tags**: Implementation  
 - [Problem](#problem)
 - [Solution](#solution)
 

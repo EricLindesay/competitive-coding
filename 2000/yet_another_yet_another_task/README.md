@@ -1,5 +1,5 @@
 # Yet Another Yet Another Task - 2000
-
+**Tags**: Data Structures, Dynamic Programming, Implementation, Two Pointers    
 - [Problem](#problem)
 - [Solution](#solution)
 

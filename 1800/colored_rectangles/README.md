@@ -1,4 +1,5 @@
 # Colored Rectangles - 1800
+**Tags**: Dynamic Programming, Greedy, Sorting
 - [Problem](#problem)
 - [Solution](#solution)
 

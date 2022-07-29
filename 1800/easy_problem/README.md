@@ -1,4 +1,5 @@
 # Easy Problem - 1800
+**Tags**: Dynamic Programming  
 - [Problem](#problem)
 - [Solution](#solution)
 

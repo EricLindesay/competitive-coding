@@ -1,4 +1,5 @@
 # Theatre Square - 1000
+**Tags**: Maths  
 - [Problem](#problem)
 - [Solution](#solution)
 
