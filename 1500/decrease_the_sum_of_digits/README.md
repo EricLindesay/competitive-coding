@@ -40,6 +40,7 @@ Output
 ## Solution
 
 ### Initial Thoughts
+O(n^2) complexity.  
 You first should find the sum of the digits of n.  
 Do a while loop, for while the sum of the digits is less than s.  
 Then, go through each digit, starting from the least significant.  
@@ -64,6 +65,7 @@ I am not certain whether this would have been fast enough as I never tested it, 
 [decrease_the_sum_of_digits.cpp](./decrease_the_sum_of_digits.cpp)  
 
 ### No Recalculation
+O(n) complexity.  
 I noticed with the previous method, it recalculates the sum of digits every time.  
 This does not need to be done, you can just keep track of how the digits change and then you can just change the total as needed.  
 This gets more complicated. For example, when its 191, would go to 200 after the first loop so you would decrease the sum by 10 rather than just 1.  
