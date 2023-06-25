@@ -5,6 +5,7 @@ def change_cost(word1, word2):
             ret += 1
     return ret
 
+
 def main(initial_ind, words):
     if len(words) == 1:
         return words[0]
@@ -14,14 +15,15 @@ def main(initial_ind, words):
 
     min_cost = -1
     next_ind = -1
-    for i,word in enumerate(words):
+    for i, word in enumerate(words):
         cost = change_cost(initial_word, word)
         if cost < min_cost or min_cost == -1:
             min_cost = cost
             next_ind = i
- 
+
     changes = f"{initial_word}\n"+main(next_ind, words[:])
     return changes
+
 
 t = input()
 n = int(t.split(" ")[0])
@@ -30,7 +32,9 @@ twords = []
 for _ in range(n):
     twords.append(input())
 
-#twords = list(set(twords)) # remove duplicates
+# Probably from kattis
+
+# twords = list(set(twords)) # remove duplicates
 # Each word needs to try being the initial word
 min_cost = -1
 min_string = ""
