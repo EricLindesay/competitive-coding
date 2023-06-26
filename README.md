@@ -1,6 +1,8 @@
 # Competitive Coding
 This is (most) of the competitive programming problems I have done.
 
+- Update this to have link to my profile
+
 ## codeforces
 [codeforces link](https://codeforces.com)  
 [codeforces solutions](/codeforces)
