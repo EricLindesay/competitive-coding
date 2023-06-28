@@ -37,3 +37,9 @@ public:
 class Solution:
     def longestPalindrome(self, s: str) -> str:
 ```
+
+# Solution
+Reverse the string, then check for palindromes in any position of any length, returning the first palindrome you find (loop from longest -> shortest palindromes).
+
+I'm not sure if this solution will be fast enough since it is O(n^2 * substr efficiency)
+[longest-palindrome-substring.cpp](longest-palindromic-substring.cpp)

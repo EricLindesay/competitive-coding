@@ -33,17 +33,7 @@ Constraints:
 - -2^31 <= x <= 2^31 - 1
 
 
-```cpp
-class Solution {
-public:
-    int reverse(int x) {
-        
-    }
-};
-```
+# Solution
+Pretty straightforward, do as it says.
 
-```py
-class Solution:
-    def reverse(self, x: int) -> int:
-```
-
+[reverse-integer.cpp](reverse-integer.cpp)
