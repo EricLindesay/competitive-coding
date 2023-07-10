@@ -10,7 +10,6 @@ int main()
     string s1, s2;
     cin >> s1;
     cin >> s2;
-    ll t = 30929;
 
     string ret = (s1.length() >= s2.length()) ? "go" : "no";
     cout << ret;

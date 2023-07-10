@@ -4,7 +4,7 @@
 - [Solution](#Solution)
 
 ## Problem
-____________________________________________
+
 [Problem Link](https://www.codewars.com/kata/56a1c63f3bc6827e13000006/train/python)
 
 This is a hard version of [How many are smaller than me?](https://www.codewars.com/kata/56a1c074f87bc2201200002e). If you have troubles solving this one, have a look at the easier kata first.
@@ -16,7 +16,7 @@ For example:
 - smaller([1, 2, 0]) === [1, 1, 0]
 
 ## Solution
-______________________________________________
+
 ### Brute Force
 Of course try brute forcing it with a nested for loop. O(n^2) complexity.  
 The purpose of this is to make sure I understand what the problem wants.
