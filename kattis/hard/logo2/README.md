@@ -78,4 +78,8 @@ If the command is `rt` or `lt`, then the answer is the difference in angle betwe
 
 One problem with this is the backwards robot doesn't necessarily need to end with the same rotation. You could brute force it. There are only 20 test cases, each with 1000 lines so `360*20*1000` worst case is only `7,200,000`.
 
+I know that brute forcing each angle won't be the most efficient way to do it but it should do the job.
+
+This isn't working and I don't quite know why... It is getting wrong answer but I'm not sure why.
+
 [logo2.cpp](./logo2.cpp)

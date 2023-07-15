@@ -150,7 +150,7 @@ int main()
 					// see if its the right direction by simulating it
 					forwards.parseCommand(questionCommand, static_cast<int>(dist));
 					if (forwards == robot) {
-						cout << dist << endl;
+						cout << static_cast<int>(dist) << endl;
 						break;
 					}  // it didn't work
 					   // undo the movement

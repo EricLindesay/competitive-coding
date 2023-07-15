@@ -63,7 +63,18 @@ neither
 ```
 
 # Solution
-[10kindsofpeople.cpp](./10kindsofpeople.cpp)
-This has time limit exceeded.
 
-Use breadth first search.
+## BFS
+Use breadth-first search and see if there is a path between them.
+
+This was too slow because it had to be repeated for every person.
+
+[10kindsofpeople.cpp](./10kindsofpeople.cpp)
+
+## Pre-process data and split into areas
+Then I tried pre-processing all the data, putting them all into areas. If two cells are in the same area, they can be reached. I did this using flood fill.  
+While doing this flood fill, replace the grid array with the area it is in, with the area being an integer >= 2.  
+
+Then, if the destination and the source are in the same area, they must be reachable.  
+
+[floodFill.cpp](./floodFill.cpp)
