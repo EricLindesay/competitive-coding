@@ -37,6 +37,8 @@ if __name__ == "__main__":
         if not os.path.exists(f"./{website[parser.website]}/{parser.difficulty}/{parser.problem_name}"):
             os.mkdir(
                 f"./{website[parser.website]}/{parser.difficulty}/{parser.problem_name}")
+        else:
+            raise NameError("File already exists")
 
     # Make the README
     print("Making README")
