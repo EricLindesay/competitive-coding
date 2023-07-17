@@ -2,6 +2,8 @@
 
 import argparse
 import os
+import kattis.parser as ka
+import requests
 
 
 def setup_argparse() -> argparse.ArgumentParser:
@@ -10,11 +12,69 @@ def setup_argparse() -> argparse.ArgumentParser:
     '''
     parser = argparse.ArgumentParser(
         description='Create readme template in correct directory')
-    parser.add_argument('website', choices=["cf", "lc", "cw", "ka"])
-    parser.add_argument('problem_name')
-    parser.add_argument('problem_link')
-    parser.add_argument('difficulty')
+    # parser.add_argument('website', choices=["cf", "lc", "cw", "ka"])
+    parser.add_argument('-ka', '--kattis', nargs=1, action="store")
+    parser.add_argument('-cf', '--codeforces', nargs=3, action="store")
+    parser.add_argument('-lc', '--leetcode', nargs=3, action="store")
+    parser.add_argument('-cw', '--codewars', nargs=3, action="store")
+    # parser.add_argument('website', choices=["cf", "lc", "cw", "ka"])
+    # parser.add_argument('problem_name')
+    # parser.add_argument('problem_link')
+    # parser.add_argument('difficulty')
     return parser.parse_args()
+
+
+def parse_args(parser) -> dict[str: str]:
+    parsed = {"website": "",
+              "problem_name": "",
+              "problem_link": "",
+              "difficulty": "",
+              }
+    if (parser.kattis):
+        parsed["website"] = "kattis"
+        parsed["problem_name"] = parser.kattis[0]
+        parsed["problem_link"] = "https://open.kattis.com/problems/" + \
+            parsed["problem_name"]
+        parsed["difficulty"] = ka.getProblemDifficulty(
+            parsed["problem_link"], requests.Session())
+        return parsed
+
+    data = None
+    if (parser.codeforces):
+        parsed["website"] = "codeforces"
+        data = parser.codeforces
+    if (parser.leetcode):
+        parsed["website"] = "leetcode"
+        data = parser.leetcode
+    if (parser.codewars):
+        parsed["website"] = "codewars"
+        data = parser.codewars
+
+    parsed["problem_name"] = data[0]
+    parsed["problem_link"] = data[1]
+    parsed["difficulty"] = data[2]
+    return parsed
+
+
+def makeReadme(parser):
+    print("Making README")
+
+    # read the format
+    with open("format/README.md") as f:
+        file = f.read()
+
+    # fill in the content
+    if (parsed['website'] == "kattis"):  # custom parser for kattis
+        file = ka.generateContent(
+            file, parsed['problem_link'], parsed['problem_name'])
+    else:
+        file = file.replace("problem_link", parsed['problem_link'])
+        file = file.replace("problem_name", parsed['problem_name'])
+        file = file.replace("solution", parsed['problem_name']+".cpp")
+
+    # write the file
+    with open(dir+"/README.md", "w") as f:
+        f.write(file)
 
 
 if __name__ == "__main__":
@@ -25,37 +85,30 @@ if __name__ == "__main__":
                "cw": "codewars",
                "ka": "kattis", }
 
-    dir = "./" + "/".join([website[parser.website],
-                          parser.difficulty, parser.problem_name])
+    parsed = parse_args(parser)
+
+    dir = "./" + "/".join([parsed["website"],
+                          parsed["difficulty"], parsed["problem_name"]])
 
     # Make the directory
     print("Making Folder")
     print(dir)
-    if not os.path.exists(f"./{website[parser.website]}/{parser.difficulty}"):
-        os.mkdir(f"./{website[parser.website]}/{parser.difficulty}")
+    if not os.path.exists(f"./{parsed['website']}/{parsed['difficulty']}"):
+        os.mkdir(f"./{parsed['website']}/{parsed['difficulty']}")
     else:
-        if not os.path.exists(f"./{website[parser.website]}/{parser.difficulty}/{parser.problem_name}"):
+        if not os.path.exists(f"./{parsed['website']}/{parsed['difficulty']}/{parsed['problem_name']}"):
             os.mkdir(
-                f"./{website[parser.website]}/{parser.difficulty}/{parser.problem_name}")
+                f"./{parsed['website']}/{parsed['difficulty']}/{parsed['problem_name']}")
         else:
             raise NameError("File already exists")
 
     # Make the README
-    print("Making README")
-    with open("format/README.md") as f:
-        file = f.read()
-
-    file = file.replace("problem_link", parser.problem_link)
-    file = file.replace("problem_name", parser.problem_name)
-    file = file.replace("solution", parser.problem_name+".cpp")
-
-    with open(dir+"/README.md", "w") as f:
-        f.write(file)
+    makeReadme(parsed)
 
     # Copy the template cpp file
     print("Making cpp file")
     with open("format/template.cpp") as f:
         cpp_template = f.read()
 
-    with open(dir+"/"+parser.problem_name+".cpp", "w") as f:
+    with open(dir+"/"+parsed['problem_name']+".cpp", "w") as f:
         f.write(cpp_template)

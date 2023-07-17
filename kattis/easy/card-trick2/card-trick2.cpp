@@ -14,8 +14,7 @@ int main()
     ll t;
     cin >> t;
 
-    for (int i = 0; i < t; i++)
-    {
+	while (t--) {
 		int n;
 		cin >> n;
 		if (n == 1) {
@@ -24,34 +23,32 @@ int main()
 		}
 
 		vector<int> cards(n, -1);
-		vector<bool> seen(n, 0);
-		cards[1] = 0;  // the second card is always a 1.
-		seen[0] = true;
-		int numSeen = 1;
+		cards[1] = 1;
 
-		int cardIndex = 1;  // you start at index 1
-		int nextCardInc = 2;
-		while (numSeen < n) {
-			// now we have removed 4
-			// next card inc is how many cards to see then we accept the third card
-			int i=cards[cardIndex];
-			while (nextCardInc > 0) {
-				if (!cards[i]) {
-					nextCardInc--;
-				}
+		int i = 1;
+		int card = 2;
+		// while the distance between the card you should put down is less than the total number of cards
+		while (card <= n) {
+			int hops = 0;
+			while (hops <= card) {
 				i = (i + 1) % n;
+
+				// if the index doesn't contain a card which has already been taken
+				if (cards[i] == -1) {
+					// then don't skip over it
+					hops++;
+				}
+				// otherwise, skip over it
 			}
-			cardIndex = (cardIndex + 1) % n;
-			cards[cardIndex] = i;
-			seen[i] = true;
-			numSeen++;
-			nextCardInc++;
+
+			// place the card in the list of cards
+			cards[i] = card;
+			card++;
 		}
 
-		// print the loop
-		for (int i=0; i<cards.size(); i++) {
-			cout << cards[i] + 1 << " ";
-		}
+		// print the vector
+		for (int card : cards) 
+			cout << card << " ";
 		cout << endl;
     }
 

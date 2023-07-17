@@ -1,0 +1,8 @@
+easy - cryptographers conundrum
+easy - compound words
+easy - chocolate division
+easy - competitive arcade basketball
+easy - 99problems
+medium - loowater
+medium - fizzbuzz2
+medium - fibonaccicycles
