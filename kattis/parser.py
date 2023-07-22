@@ -95,8 +95,8 @@ def stripNewlines(text: str) -> str:
     If there is a newline followed by atleast three whitespace characters
     or a tab, remove them. Kattis just does formatting like this so remove it
     '''
-    p = re.compile(r'\n[\s\s\s|\t]')
-    text = p.sub(r'', text)
+    p = re.compile(r'\n[\s\s|\t]+')
+    text = p.sub(r' ', text)
     return text
 
 

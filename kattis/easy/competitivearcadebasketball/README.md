@@ -6,7 +6,6 @@
 [Problem link](https://open.kattis.com/problems/competitivearcadebasketball)
 
 ### Description
-        Source:        pixabay
 You’re attending a arcade basketball competition, where the   objective is to score as many points as possible until the time   runs out. The announcer has informed the crowd that their   scoreboard is broken, so they don’t have a way to keep track of   all the scores. As a seasoned programmer, you feel you can whip   up a program that can keep track of the names of the players   and the amount of points they’ve scored, announcing the   winner(s) at the end of the contest.
 
 ### Input
@@ -88,5 +87,8 @@ No winner!
 
 
 ## Solution
+Use a map of participant name to score.
 
 [competitivearcadebasketball.cpp](./competitivearcadebasketball.cpp)
+
+Solved!

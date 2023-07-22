@@ -34,5 +34,8 @@ Output
 
 
 ## Solution
+Do exactly what you would expect.
 
 [conundrum.cpp](./conundrum.cpp)
+
+Solved!

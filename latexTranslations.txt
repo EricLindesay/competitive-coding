@@ -1,9 +1,9 @@
 \rightarrow|->
 \leftarrow|<-
 \,|,
-\le|<=
 \leq|<=
-\ge|>=
+\le|<=
 \geq|>=
+\ge|>=
 \ne|!=
 \times|*

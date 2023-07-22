@@ -1,8 +1,8 @@
-easy - cryptographers conundrum
-easy - compound words
+easy - cryptographers conundrum - solved
+easy - compound words - solved
 easy - chocolate division
-easy - competitive arcade basketball
-easy - 99problems
-medium - loowater
-medium - fizzbuzz2
-medium - fibonaccicycles
+easy - competitive arcade basketball - solved
+easy - 99problems - solved
+medium - loowater - solved
+medium - fizzbuzz2 - solved
+medium - fibonaccicycles - solved

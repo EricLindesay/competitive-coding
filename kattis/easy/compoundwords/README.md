@@ -35,5 +35,8 @@ bbb
 
 
 ## Solution
+Use a set. A set is (by default) sorted in dictionary sort order and has no duplicates.
 
 [compoundwords.cpp](./compoundwords.cpp)
+
+Solved!

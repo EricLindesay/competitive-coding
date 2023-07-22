@@ -10,11 +10,30 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    ll t;
-    cin >> t;
+    int q;
+	cin >> q;
 
-    for (int i = 0; i < t; i++) {
-    }
+	while (q--) {
+		int k;
+		cin >> k;
+		vector<int> seen(k, 0);
+
+		int a = 1;
+		int b = 1;
+		int i = 2;
+		int c;
+		while (true) {
+			c = (a + b) % k;
+			a = b;
+			b = c;
+			if (seen[c])
+				break;
+
+			seen[c] = i;
+			++i;
+		}
+		cout << seen[c] << endl;
+	}
 
     return 0;
 }

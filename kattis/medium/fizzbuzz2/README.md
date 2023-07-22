@@ -16,12 +16,13 @@ if the number is divisible by neither `3` and `5`, output the number itself.
 Since the job is top secret, the company cares very much   about the right thing being printed in the right place. Your   task is to find the candidate whose program outputs the right   thing at the right place the most times.
 
 ### Input
-The first line of the input consists of the integers   `N` (`2 <=q N <=q 1000`) and `M` (`2   <=q M <=q 100`), the number of candidates and the   number of values their programs should output.
+The first line of the input consists of the integers   `N` (`2 <= N <= 1000`) and `M` (`2   <= M <= 100`), the number of candidates and the   number of values their programs should output.
 The next `N` lines each   contain `M` strings   consisting only of small letters a-z   and digits `0`-`9`,   separated by a single whitespace. The `i`’th of these lines contains the   output from candidate `i`.   Each of the `M` strings in   the output from a candidate contains at least one   character.
 
 ### Output
 Print the number of the candidate whose output has the most   correct things printed in the correct place. In case of a tie,   output the candidate with the lowest number.
-Explanation of sample 1
+
+### Explanation of example 1
 In the example, the third candidate output the right thing   at every place. The other two have at least one incorrect   output, so the third candidate has the most correct words.
 
 ### Examples
@@ -54,5 +55,8 @@ Output
 
 
 ## Solution
+Keep track of the best candidate and the score they got.
 
 [fizzbuzz2.cpp](./fizzbuzz2.cpp)
+
+Solved!

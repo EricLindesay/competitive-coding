@@ -8,9 +8,13 @@
 ### Description
 
 Once upon a time, in the Kingdom of Loowater, a minor   nuisance turned into a major problem.
+
 The shores of Rellau Creek in central Loowater had always   been a prime breeding ground for geese. Due to the lack of   predators, the geese population was out of control. The people   of Loowater mostly kept clear of the geese. Occasionally, a   goose would attack one of the people, and perhaps bite off a   finger or two, but in general, the people tolerated the geese   as a minor nuisance.
+
 One day, a freak mutation occurred, and one of the geese   spawned a multi-headed fire-breathing dragon. When the dragon   grew up, he threatened to burn the Kingdom of Loowater to a   crisp. Loowater had a major problem. The king was alarmed, and   called on his knights to slay the dragon and save the   kingdom.
+
 The knights explained: “To slay the dragon, we must chop off   all its heads. Each knight can chop off one of the dragon’s   heads. The heads of the dragon are of different sizes. In order   to chop off a head, a knight must be at least as tall as the   diameter of the head. The knights’ union demands that for   chopping off a head, a knight must be paid a wage equal to one   gold coin for each centimetre of the knight’s height.”
+
 Would there be enough knights to defeat the dragon? The king   called on his advisors to help him decide how many and which   knights to hire. After having lost a lot of money building Mir   Park, the king wanted to minimize the expense of slaying the   dragon. As one of the advisors, your job was to help the king.   You took it very seriously: if you failed, you and the whole   kingdom would be burnt to a crisp!
 
 ### Input
@@ -38,8 +42,29 @@ Output
 11
 Loowater is doomed!
 ```
+```
+Input
+0 3
+3
+2
+1
+2 0
+5
+5
+0 0
+Output
+0
+Loowater is doomed!
+```
 
 
 ## Solution
+Have a priority queue of knights and a priority queue of the dragon heads, sort the priority queues by height ascending.
+
+Then loop through the dragon queue and see if there is a knight which is tall enough to kill it.  
+
+PQs are a good data structure here since it sorts the data (which is what we want) and allows you to take the smallest element from the queue.
 
 [loowater.cpp](./loowater.cpp)
+
+Solved!

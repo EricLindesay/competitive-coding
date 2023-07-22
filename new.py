@@ -56,6 +56,13 @@ def parse_args(parser) -> dict[str: str]:
     return parsed
 
 
+def generateContent(file, parsed):
+    file = file.replace("problem_link", parsed['problem_link'])
+    file = file.replace("problem_name", parsed['problem_name'])
+    file = file.replace("solution", parsed['problem_name']+".cpp")
+    return file
+
+
 def makeReadme(parser):
     print("Making README")
 
@@ -65,12 +72,13 @@ def makeReadme(parser):
 
     # fill in the content
     if (parsed['website'] == "kattis"):  # custom parser for kattis
-        file = ka.generateContent(
-            file, parsed['problem_link'], parsed['problem_name'])
+        try:
+            file = ka.generateContent(
+                file, parsed['problem_link'], parsed['problem_name'])
+        except Exception:       # if there is any exception, just parse it normally
+            generateContent(file, parsed)
     else:
-        file = file.replace("problem_link", parsed['problem_link'])
-        file = file.replace("problem_name", parsed['problem_name'])
-        file = file.replace("solution", parsed['problem_name']+".cpp")
+        generateContent(file, parsed)
 
     # write the file
     with open(dir+"/README.md", "w") as f:

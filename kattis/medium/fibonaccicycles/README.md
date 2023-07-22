@@ -12,8 +12,8 @@ Now, one can only list out the same numbers so many times   before getting bored
 Can you write a program to help Yraglac find the answer?
 
 ### Input
-The first line contains a single integer `1 <=q Q <=q 500`, the number of   queries to follow.
-The next `Q` lines each   contain a single integer `2 <=q   k <=q 1, 000`, the modulo to be used for the query. It   is guaranteed that some number in the sequence will be   repeated.
+The first line contains a single integer `1 <= Q <= 500`, the number of   queries to follow.
+The next `Q` lines each   contain a single integer `2 <=   k <= 1, 000`, the modulo to be used for the query. It   is guaranteed that some number in the sequence will be   repeated.
 
 ### Output
 For each query, output the `n` such that `F_ n` is the first number in the   sequence of Fibonacci numbers modulo `k` that has a repeat at some point in   the sequence.
@@ -33,5 +33,12 @@ Output
 
 
 ## Solution
+Have a vector which is `k` long, representing the index where you last saw the number.
+
+Then, after calculating the c value, check whether it is already in the vector. If it is, then print the value stored in the vector, otherwise just store it in the vector.
+
+The one thing to note here though is both `a` and `b` start at `1` instead of `0, 1`
 
 [fibonaccicycles.cpp](./fibonaccicycles.cpp)
+
+Solved!
