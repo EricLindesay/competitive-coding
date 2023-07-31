@@ -75,7 +75,8 @@ def makeReadme(parser):
         try:
             file = ka.generateContent(
                 file, parsed['problem_link'], parsed['problem_name'])
-        except Exception:       # if there is any exception, just parse it normally
+        except Exception as e:       # if there is any exception, just parse it normally
+            print("ERROR - "+e)
             generateContent(file, parsed)
     else:
         generateContent(file, parsed)

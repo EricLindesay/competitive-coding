@@ -7,3 +7,4 @@
 \ge|>=
 \ne|!=
 \times|*
+\ldots|...
