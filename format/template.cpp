@@ -1,10 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <string>
-#include <algorithm>
-#include <map>
-#include <queue>
+#include <bits/stdc++.h>
 
 typedef long long ll;
 
@@ -16,8 +10,9 @@ int main() {
     ll t;
     cin >> t;
 
-    for (int i = 0; i < t; i++) {
-    }
+	while (t--) {
+
+	}
 
     return 0;
 }

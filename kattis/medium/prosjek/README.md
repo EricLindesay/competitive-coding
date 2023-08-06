@@ -21,7 +21,7 @@ First and only line of input contains real number `P`. `P` will have between 1 a
 ### Output
 First and only line of output should contain five nonnegative integers – numbers of ones, twos, threes, fours and fives used, respectively. If there are multiple solutions, output any one of them.
 
-
+12345678
 ### Examples
 ```
 Input
