@@ -1,20 +1,19 @@
 # Competitive Coding
-This is (most) of the competitive programming problems I have done.
+This is (most) of the competitive programming problems I have done, not including problems completed on [hackerrank](https://www.hackerrank.com/eric285?hr_r=1)
 
-- Update this to have link to my profile
+
+## kattis
+[kattis profile link](https://open.kattis.com/users/eric-lindesay)  
+[kattis solutions](/kattis)
 
 ## codeforces
-[codeforces link](https://codeforces.com)  
+[codeforces profile link](https://codeforces.com/profile/FlyingApple)  
 [codeforces solutions](/codeforces)
 
 ## leetcode
-[leetcode link](https://leetcode.com)  
+[leetcode profile link](https://leetcode.com/FlyingApple/)  
 [leetcode solutions](/leetcode)
 
 ## codewars
-[codewars link](https://codewars.com)  
+[codewars profile link](https://www.codewars.com/users/EricLindesay)  
 [codewars solutions](/codewars)
-
-## kattis
-[kattis link](https://kattis.com)  
-[kattis solutions](/kattis)
