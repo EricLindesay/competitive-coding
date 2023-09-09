@@ -9,7 +9,10 @@ int main() {
     cin.tie(NULL);
     ll t;
     cin >> t;
-    cout << endl << t << endl;
+
+	while (t--) {
+
+	}
 
     return 0;
 }

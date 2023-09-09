@@ -2,7 +2,9 @@
 
 import argparse
 import os
-import kattis.parser as ka
+from parsers.kattis import KattisParser
+from parsers.leetcode import LeetcodeParser
+from parsers._parser import fill_content
 import requests
 
 
@@ -15,7 +17,7 @@ def setup_argparse() -> argparse.ArgumentParser:
     # parser.add_argument('website', choices=["cf", "lc", "cw", "ka"])
     parser.add_argument('-ka', '--kattis', nargs=1, action="store")
     parser.add_argument('-cf', '--codeforces', nargs=3, action="store")
-    parser.add_argument('-lc', '--leetcode', nargs=3, action="store")
+    parser.add_argument('-lc', '--leetcode', nargs=1, action="store")
     parser.add_argument('-cw', '--codewars', nargs=3, action="store")
     # parser.add_argument('website', choices=["cf", "lc", "cw", "ka"])
     # parser.add_argument('problem_name')
@@ -30,23 +32,28 @@ def parse_args(parser) -> dict[str: str]:
               "problem_link": "",
               "difficulty": "",
               }
-    if (parser.kattis):
+    if parser.kattis:
         parsed["website"] = "kattis"
         parsed["problem_name"] = parser.kattis[0]
         parsed["problem_link"] = "https://open.kattis.com/problems/" + \
             parsed["problem_name"]
-        parsed["difficulty"] = ka.getProblemDifficulty(
-            parsed["problem_link"], requests.Session())
+        parsed["difficulty"] = KattisParser(
+            parsed["problem_name"]).get_problem_difficulty()
+        return parsed
+    elif parser.leetcode:
+        parsed["website"] = "leetcode"
+        parsed["problem_name"] = parser.leetcode[0]
+        parsed["problem_link"] = "https://leetcode.com/problems/" + \
+            parsed["problem_name"]
+        parsed["difficulty"] = LeetcodeParser(
+            parsed["problem_name"]).get_problem_difficulty()
         return parsed
 
     data = None
-    if (parser.codeforces):
+    if parser.codeforces:
         parsed["website"] = "codeforces"
         data = parser.codeforces
-    if (parser.leetcode):
-        parsed["website"] = "leetcode"
-        data = parser.leetcode
-    if (parser.codewars):
+    if parser.codewars:
         parsed["website"] = "codewars"
         data = parser.codewars
 
@@ -71,13 +78,20 @@ def makeReadme(parser):
         file = f.read()
 
     # fill in the content
-    if (parsed['website'] == "kattis"):  # custom parser for kattis
+    if parsed['website'] == "kattis":  # custom parser for kattis
         try:
-            file = ka.generateContent(
-                file, parsed['problem_link'], parsed['problem_name'])
+            file = fill_content(
+                file, KattisParser(parsed['problem_name']))
         except Exception as e:       # if there is any exception, just parse it normally
             print("ERROR - ", e)
             generateContent(file, parsed)
+    elif parsed['website'] == "leetcode":  # custom parser for kattis
+        # try:
+        file = fill_content(
+            file, LeetcodeParser(parsed['problem_name']))
+        # except Exception as e:       # if there is any exception, just parse it normally
+        # print("ERROR - ", e)
+        # generateContent(file, parsed)
     else:
         generateContent(file, parsed)
 
@@ -116,8 +130,15 @@ if __name__ == "__main__":
 
     # Copy the template cpp file
     print("Making cpp file")
-    with open("format/template.cpp") as f:
-        cpp_template = f.read()
+    if parsed["website"] == "leetcode":
+        with open("format/leetcodeTemplate.cpp") as f:
+            cpp_template = f.read()
+
+        cpp_template = LeetcodeParser(
+            parsed["problem_name"]).format_template(cpp_template)
+    else:
+        with open("format/template.cpp") as f:
+            cpp_template = f.read()
 
     with open(dir+"/"+parsed['problem_name']+".cpp", "w") as f:
         f.write(cpp_template)

@@ -3,7 +3,7 @@
 - [Solution](#solution)
 
 ## Problem
-[Problem link](problem_link)
+[Problem link](https://leetcode.com/problems/longest-consecutive-sequence/)
 
 ### Description
 
