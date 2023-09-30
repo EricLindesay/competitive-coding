@@ -21,4 +21,4 @@ c b a
 
 ## Solution
 
-[solution](./solution)
+[solution_name](./solution_cpp)

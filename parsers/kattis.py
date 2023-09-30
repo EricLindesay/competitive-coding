@@ -122,19 +122,6 @@ class KattisParser(Parser):
         return text
 
 
-def generateContent(fileinfo: str, problem_name: str) -> str:
-    '''
-    Generates the content for the readme file
-    '''
-    parser = KattisParser(problem_name)
-    fileinfo = parser.delete_original_example(fileinfo)
-    fileinfo = parser.replace_problem_description(fileinfo)
-    fileinfo = parser.replace_solution_text(fileinfo)
-    fileinfo = parser.replace_problem_link(fileinfo)
-    fileinfo = parser.replace_problem_name(fileinfo)
-    return fileinfo
-
-
 if __name__ == "__main__":
     fileinfo = ""
     with open("../format/README.md") as f:

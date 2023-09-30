@@ -36,4 +36,27 @@ Output
 
 ## Solution
 
+Addition and multiplication is easy. Just take the last four digits and add/multiply them and then return the last four digits of the answer.  
+Exponentiation is much more difficult.  
+You should be able to block the first number so that it only uses the last four digits of this number (because it works the same as mulitplication). But I don't think you can just get the last four digits of the second number because it will give the wrong result. But doing the entire exponentiation takes too long.  
+You may have to look for cycles in the exponentiation. There may be a time where it loops back on itself and comes to the same four end digits again.
+E.g. with powers of 2.
+```
+2^6
+
+2*2 = 4, 4 % 10 = 4
+4*2 = 8, 8 % 10 = 8
+8*2 = 16, 16 % 10 = 6
+6*2 = 12, 12 % 10 = 2  -- we have found the start of a loop, since we have already seen the value `2` at the start
+So, now we can use the loop to see that we have already done 4 loops and need to do 2 more.
+Which we can look up and see it is 8, without any extra calculations.
+```
+
+But you have to be careful, the loop doesn't always start/end at one value.
+
+I've implemented that, and it works for the large sample input, now I just need to try submit it later.
+
+That gives a wrong answer.
+You also can't just manually do the exponentiation by multiplying since it causes a Time limit exceeded error.
+
 [checkingforcorrectness.cpp](./checkingforcorrectness.cpp)

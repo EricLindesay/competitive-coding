@@ -11,13 +11,15 @@ class Parser():
         return text.replace("```\nInput\na b c\nOutput\nc b a\n```", "")
 
     def replace_solution_text(self, fileinfo: str) -> str:
-        return fileinfo.replace("solution", self.get_problem_slug()+".cpp")
+        fileinfo = fileinfo.replace(
+            "solution_cpp", self.get_problem_slug()+".cpp")
+        return fileinfo.replace("solution_name", self.get_problem_slug()+".cpp")
 
     def replace_problem_name(self, fileinfo: str) -> str:
         return fileinfo.replace("problem_name", self.get_problem_name())
 
     def replace_problem_link(self, fileinfo: str) -> str:
-        return fileinfo.replace("problem_linK", self.base_url+self.get_problem_slug())
+        return fileinfo.replace("problem_link", self.base_url+self.get_problem_slug())
 
     def get_problem_slug(self) -> str:
         return self.problem_slug

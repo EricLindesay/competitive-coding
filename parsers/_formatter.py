@@ -20,6 +20,8 @@ class Formatter:
         text = text.replace("</li>", "")
         text = text.replace("<sup>", "^")
         text = text.replace("</sup>", "")
+        text = text.replace("<u>", "**")
+        text = text.replace("</u>", "**")
         return text
 
     def fix_ampersands(text: str) -> str:

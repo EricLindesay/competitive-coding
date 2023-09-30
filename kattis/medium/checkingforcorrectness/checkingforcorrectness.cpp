@@ -26,8 +26,26 @@ int exponentiation(ll a, ll b) {
 	int out = lastA;
 	// I don't think you can do the last 4 digits here, I think you have to use the entire exponent.
 	// You might have to find a loop and then from that loop you can work out where the exponet comes into play
-	for (int i=0; i<b-1; i++) {
+	map<int, int> seen;  // the last four digits : the index in loop
+	vector<int> loop;
+	loop.push_back(out);
+	seen[out] = 0;
+	b--;
+	while (b >= 1) {
 		out = multiplication(out, lastA);
+		if (seen.count(out)) {
+			// its the start of the loop so work out the rest manually
+			ll loop_size = loop.size() - seen[out];
+			ll t = (seen[out] + b) % loop_size;
+			if (t == 0) {
+				t = loop.size();
+			}
+			out = loop[t - 1];
+			break;
+		}
+		seen[out] = loop.size();
+		loop.push_back(out);
+		b--;
 	}
 	return out;
 }

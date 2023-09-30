@@ -100,7 +100,12 @@ if __name__ == "__main__":
                     break
 
     if show_complete:
-        print("Completed Problems: ")
+        num_complete = 0;
+        for i in range(0, len(sites)):
+            if show_site[i]:
+                num_complete += len(complete_problems[sites[i]])
+
+        print(f"{num_complete} Completed Problems: ")
         for i in range(0, len(sites)):
             if show_site[i]:
                 print("\n".join(complete_problems[sites[i]]))
@@ -109,7 +114,13 @@ if __name__ == "__main__":
         if show_complete:
             print("")  # print a newline for formatting
 
-        print("Incomplete Problems:")
+        num_incomplete = 0;
+        for i in range(0, len(sites)):
+            if show_site[i]:
+                num_incomplete += len(incomplete_problems[sites[i]])
+
+        print(f"{num_incomplete} Incomplete Problems:")
         for i in range(0, len(sites)):
             if show_site[i]:
                 print("\n".join(incomplete_problems[sites[i]]))
+
