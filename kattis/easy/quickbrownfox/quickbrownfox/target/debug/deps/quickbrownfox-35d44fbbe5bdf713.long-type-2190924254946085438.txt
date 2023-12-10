@@ -1,0 +1,1 @@
+Map<Filter<std::str::Bytes<'_>, for<'a> fn(&'a u8) -> bool {core::num::<impl u8>::is_ascii_alphabetic}>, for<'a> fn(&'a u8) -> u8 {core::num::<impl u8>::to_ascii_lowercase}>
