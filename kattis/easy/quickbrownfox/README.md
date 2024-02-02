@@ -46,6 +46,6 @@ missing klmnopqrstuvwxyz
 
 ## Solution
 
-[quickbrownfox.cpp](./quickbrownfox.cpp)
+[quickbrownfox/src/main.rs](./quickbrownfox/src/main.rs)
 
 Solved!

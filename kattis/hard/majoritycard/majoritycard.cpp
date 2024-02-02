@@ -64,9 +64,7 @@ int main() {
 	map<int, map<int, bool>, greater<int>> freq;  // freq: <card, true>
 											   // could have a hashmap for constant lookup here but then finding best is harder. Actually it isn't since the inner map will be sorted anyway and the outer keeps the sorting
 											   // or a separate hashmap of value -> index
-	map<int, int> indexLookup;  // but if you remove something, this gets bad
-
-	while (t--) {
+	while (t--) { 
 		string cmd;
 		cin >> cmd;
 
