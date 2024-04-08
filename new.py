@@ -13,7 +13,10 @@ def setup_argparse() -> argparse.ArgumentParser:
     Setup argparse arguments.
     '''
     parser = argparse.ArgumentParser(
-        description='Create readme template in correct directory')
+        description='Create readme template in correct directory\n \
+                     Leetcode and Kattis uses the problem slug\n \
+                     Codeforces uses name, link, difficulty\
+                     ')
     # parser.add_argument('website', choices=["cf", "lc", "cw", "ka"])
     parser.add_argument('-ka', '--kattis', nargs=1, action="store")
     parser.add_argument('-cf', '--codeforces', nargs=3, action="store")
@@ -53,6 +56,8 @@ def parse_args(parser) -> dict[str: str]:
     if parser.codeforces:
         parsed["website"] = "codeforces"
         data = parser.codeforces
+        if int(data[2]) <= 1000:
+            data[2] = "easy"
     if parser.codewars:
         parsed["website"] = "codewars"
         data = parser.codewars
@@ -60,6 +65,7 @@ def parse_args(parser) -> dict[str: str]:
     parsed["problem_name"] = data[0]
     parsed["problem_link"] = data[1]
     parsed["difficulty"] = data[2]
+
     return parsed
 
 

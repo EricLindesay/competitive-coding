@@ -9,7 +9,14 @@ int main() {
     cin.tie(NULL);
     ll t;
     cin >> t;
-    cout << endl << t << endl;
+	vector<ll> ns(t);
+
+	for (ll &i : ns) {
+		cin >> i;
+	}
+	for (int i=ns.size()-1; i>=0; i--) {
+		cout << ns[i] << " ";
+	}
 
     return 0;
 }

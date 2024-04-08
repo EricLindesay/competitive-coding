@@ -7,9 +7,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    ll t;
-    cin >> t;
-    cout << endl << t << endl;
 
+	cout << "yesnt" << endl;
     return 0;
 }

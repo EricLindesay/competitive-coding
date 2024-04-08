@@ -9,7 +9,12 @@ int main() {
     cin.tie(NULL);
     ll t;
     cin >> t;
-    cout << endl << t << endl;
+
+	ll a, b, m;
+	while (t--) {
+		cin >> a >> b >> m;
+		cout << m/a + m/b + 2 << endl;
+	}
 
     return 0;
 }

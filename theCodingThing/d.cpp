@@ -9,7 +9,20 @@ int main() {
     cin.tie(NULL);
     ll t;
     cin >> t;
-    cout << endl << t << endl;
+
+	int n;
+	int a, b;
+	while (t--) {
+		cin >> n;
+		int cuts = 0;
+		while (n--) {
+			cin >> a >> b;
+			if (a-b > 0) {
+				cuts++;
+			}
+		}
+		cout << cuts << endl;
+	}
 
     return 0;
 }
